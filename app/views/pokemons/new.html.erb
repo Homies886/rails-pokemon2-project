@@ -1,0 +1,27 @@
+<h1>Add a Pokemon to your collection!</h1>
+
+<%= form_for(@pokemon) do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+
+    <p> Select a Region: </p>
+    <div>
+        <%= f.collection_select :region_id, Region.all, :id, :name %>
+    </div>
+
+    <p> Or add a new Region </p>
+    <div>
+        <%=f.fields_for :region do |r| %>
+            <%= r.label :name %>
+            <%= r.text_field :name %>
+        <% end %>
+    </div>
+
+    <%= f.submit "Add Pokemon" %>
+<% end %>
