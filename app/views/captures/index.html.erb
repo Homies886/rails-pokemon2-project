@@ -1,0 +1,7 @@
+<h1>All Captures</h1>
+
+<ul>
+<% @captures.each do |c| %>
+    <li><%= c.pokemon.name%>: <%= c.pokeball%> - <%= c.captured%></li>
+<% end %>
+</ul>
