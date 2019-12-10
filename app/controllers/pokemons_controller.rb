@@ -15,6 +15,10 @@ class PokemonsController < ApplicationController
         end
     end
 
+    def index
+        @pokemons = Pokemon.all
+    end
+
     private
 
     def pokemon_params

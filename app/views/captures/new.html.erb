@@ -1,0 +1,14 @@
+<%= form_for(@capture) do |f| %>
+    <div>
+        <%= f.label :pokeball %>
+        <%= f.text_field :pokeball %>
+    </div>
+    <div>
+        <%= f.label :captured %>
+        <%= f.date_field :captured %>
+    </div>
+    <%= f.hidden_field :pokemon_id %>
+
+    <%= f.submit "Add Catch" %>
+
+<% end%>

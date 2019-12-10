@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   resources :captures
-  resources :pokemons
+  resources :pokemons do
+    resources :captures, only: [:new, :index]
+  end
   resources :regions
   resources :users
 
