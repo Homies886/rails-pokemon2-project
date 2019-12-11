@@ -6,7 +6,6 @@ class Pokemon < ApplicationRecord
   accepts_nested_attributes_for :region
 
   validates :name, presence: true
-  validate :not_a_duplicate
 
   validates :name, uniqueness: { scope: :region, message: "has already been added" }
 
