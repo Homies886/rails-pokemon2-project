@@ -8,6 +8,6 @@ class Pokemon < ApplicationRecord
   validates :name, presence: true
   validate :not_a_duplicate
 
-  validates :name, uniqueness: { scope: :region, message: "has already been caught by you"  }
+  validates :name, uniqueness: { scope: :region, message: "has already been added" }
 
 end
