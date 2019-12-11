@@ -1,5 +1,7 @@
 <h1>Capture a Pokemon</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @capture}  %>
+
 <%= form_for(@capture) do |f| %>
     <div>
         <%= f.label :pokeball %>

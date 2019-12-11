@@ -1,5 +1,7 @@
 <h1>Add a Pokemon to your collection!</h1>
 
+<%= render partial: 'layouts/errors', locals: {object: @pokemon}  %>
+
 <%= form_for(@pokemon) do |f| %>
     <div>
         <%= f.label :name %>
