@@ -1,8 +1,6 @@
-<% if params[:pokemon_id] %>
-  <h1>Add a Capture for <%= @capture.pokemon.name%> - <%= @capture.pokemon.region.name%></h1>
-<% else %>
-  <h1>Create a Capture </h1>
-<% end %>
+<h1>Catch a Pokemon </h1>
+
+<%= render partial: 'layouts/errors', locals: {object: @capture}  %>
 
 
 <%= form_for(@capture) do |f| %>
@@ -11,7 +9,7 @@
     <% else %>
         <div>
             <%= f.label :pokemon_id, "Select an Pokemon" %>
-            <%= f.collection_select :pokemon_id, Pokemon.all, :id, :name, include_blank: true %>
+            <%= f.collection_select :pokemon_id, Pokemon.alphabetically, :id, :pokemon_and_region, include_blank: true %>
         </div>
     <% end %>
     <div>

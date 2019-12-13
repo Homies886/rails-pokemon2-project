@@ -13,4 +13,8 @@ class Pokemon < ApplicationRecord
     order(:name)
   end
 
+  def pokemon_and_region
+    "#{name} - #{region.name}"
+  end
+
 end

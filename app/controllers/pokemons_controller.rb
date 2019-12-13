@@ -7,9 +7,9 @@ class PokemonsController < ApplicationController
 
     def create
         @pokemon = Pokemon.new(pokemon_params)
-    
+        @pokemon.user_id = session[:user_id]
         if @pokemon.save
-          redirect_to @pokemon
+          redirect_to poekmon_path(@pokemon)
         else
           render :new
         end
@@ -17,6 +17,10 @@ class PokemonsController < ApplicationController
 
     def index
         @pokemons = Pokemon.all
+    end
+
+    def show
+        @pokemon = Pokemon.find_by_id(params[:id])
     end
 
     private
