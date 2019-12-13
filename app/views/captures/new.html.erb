@@ -1,17 +1,23 @@
-<h1>Capture a Pokemon</h1>
+<% if params[:pokemon_id] %>
+  <h1>Add a Capture for <%= @capture.pokemon.name%> - <%= @capture.pokemon.region.name%></h1>
+<% else %>
+  <h1>Create a Capture </h1>
+<% end %>
 
-<%= render partial: 'layouts/errors', locals: {object: @capture}  %>
 
 <%= form_for(@capture) do |f| %>
-    <div>
-        <%= f.label :pokeball %>
-        <%= f.text_field :pokeball %>
-    </div>
+    <% if params[:pokemon_id] %>
+        <%= f.hidden_field :pokemon_id %>
+    <% else %>
+        <div>
+            <%= f.label :pokemon_id, "Select an Pokemon" %>
+            <%= f.collection_select :pokemon_id, Pokemon.all, :id, :name, include_blank: true %>
+        </div>
+    <% end %>
     <div>
         <%= f.label :captured %>
         <%= f.date_field :captured %>
     </div>
-    <%= f.hidden_field :pokemon_id %>
 
     <%= f.submit "Add Catch" %>
 

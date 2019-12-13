@@ -9,4 +9,8 @@ class Pokemon < ApplicationRecord
 
   validates :name, uniqueness: { scope: :region, message: "has already been added" }
 
+  def self.alphabetically
+    order(:name)
+  end
+
 end
