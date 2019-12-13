@@ -1,4 +1,9 @@
-<h1>All Captures</h1>
+<% if @pokemon %>
+  <h1>Captures for <%= @pokemon.name%> - <%= @pokemon.region.name%></h1>
+<% else %>
+  <h1>All Capturess </h1>
+<% end %>
+
 
 <ul>
 <% @captures.each do |c| %>
