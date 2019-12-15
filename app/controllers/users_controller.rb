@@ -5,11 +5,8 @@ class UsersController < ApplicationController
     end
 
     def show
-        if logged_in?
-            @user = User.find_by(id: params[:id])
-        else
-            redirect_to root_path
-        end
+        @user = User.find_by_id(params[:id])
+        redirect_to '/' if !@user
     end
 
     def create
