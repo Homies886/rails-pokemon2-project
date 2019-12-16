@@ -1,4 +1,5 @@
 class CapturesController < ApplicationController
+    before_action :redirect_if_not_logged_in
 
     def new
         @pokemon = Pokemon.find_by_id(params[:pokemon_id])
