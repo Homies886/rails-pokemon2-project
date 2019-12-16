@@ -1,0 +1,24 @@
+<h1>Edit your Pokemon</h1>
+
+<%= render partial: 'layouts/errors', locals: {object: @pokemon}  %>
+
+<%= form_for(@pokemon) do |f| %>
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+    
+    <p> Add a Region </p>
+    <div>
+        <%=f.fields_for :region do |r| %>
+            <%= r.label :region %>
+            <%= r.text_field :name %>
+        <% end %>
+    </div>
+
+    <%= f.submit "Update Pokemon" %>
+<% end %>

@@ -3,3 +3,6 @@
 <div>
   <p><%= @pokemon.description %></p>
 </div>
+
+
+<%= link_to "Edit #{@pokemon.name}", edit_pokemon_path(@pokemon) if @pokemon.user == current_user%>

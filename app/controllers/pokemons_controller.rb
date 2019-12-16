@@ -1,4 +1,5 @@
 class PokemonsController < ApplicationController
+    before_action :set_pokemon, only:[:show, :edit, :update]
     before_action :redirect_if_not_logged_in
 
     def new
@@ -22,7 +23,17 @@ class PokemonsController < ApplicationController
     end
 
     def show
-        @pokemon = Pokemon.find_by_id(params[:id])
+    end
+
+    def edit
+    end
+
+    def update
+        if @pokemon.update(pokemon_params)
+            redirect_to pokemon_path(@pokemon)
+        else
+            render :edit
+        end
     end
 
     private
@@ -30,5 +41,10 @@ class PokemonsController < ApplicationController
     def pokemon_params
         params.require(:pokemon).permit(:name, :description, :region_id, region_attributes: [:name])
     end
+
+    def set_pokemon
+        @pokemon = Pokemon.find_by(params[:id])
+        redirect_to pokemons_path if !@pokemon
+     end
 
 end
