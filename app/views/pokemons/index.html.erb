@@ -1,8 +1,7 @@
 <h1>Pokemon</h1>
 
+<ul>
 <% @pokemons.each do |p| %>
-    <h2><%= p.name%> - <%= p.region.name %></h2>
-    <div>
-        <p><%= p.description %></p>
-    </div>
+    <li><%= p.name%> (<%= p.region.name%>) - <%= p.description%></li>
 <% end %>
+</ul>
