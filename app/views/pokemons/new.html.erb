@@ -14,7 +14,7 @@
 
     <p> Select a Region: </p>
     <div>
-        <%= f.collection_select :region_id, Region.all, :id, :name %>
+        <%= f.collection_select :region_id, Region.all, :id, :name, include_blank: 'Choose One'%>
     </div>
 
     <p> Or add a new Region </p>
