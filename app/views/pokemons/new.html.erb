@@ -12,12 +12,8 @@
         <%= f.text_field :description %>
     </div>
 
-    <p> Select a Region: </p>
-    <div>
-        <%= f.collection_select :region_id, Region.all, :id, :name, include_blank: 'Choose One'%>
-    </div>
 
-    <p> Or add a new Region </p>
+    <p> Add a Region </p>
     <div>
         <%=f.fields_for :region do |r| %>
             <%= r.label :name %>

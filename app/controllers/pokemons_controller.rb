@@ -7,6 +7,7 @@ class PokemonsController < ApplicationController
 
     def create
         @pokemon = Pokemon.new(pokemon_params)
+        @pokemon.region = Region.find_or_create_by(pokemon_params[:region_attributes][name: :name])
         @pokemon.user_id = session[:user_id]
         if @pokemon.save
           redirect_to pokemon_path(@pokemon)
