@@ -32,13 +32,6 @@ class SessionsController < ApplicationController
         redirect_to '/'
     end
 
-    def omniauth
-        @user = User.create_by_google(auth)
-    
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
-    end
-
     private
 
     def auth

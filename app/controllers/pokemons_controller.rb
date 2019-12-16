@@ -9,7 +9,7 @@ class PokemonsController < ApplicationController
         @pokemon = Pokemon.new(pokemon_params)
         @pokemon.user_id = session[:user_id]
         if @pokemon.save
-          redirect_to poekmon_path(@pokemon)
+          redirect_to pokemon_path(@pokemon)
         else
           render :new
         end
