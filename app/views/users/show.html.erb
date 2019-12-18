@@ -3,6 +3,6 @@ Welcome Trainer <%= @user.username%>!
 <h3>Here are the Pokemon you've caught:</h3>
 <div>
   <% @user.captured_pokemons.each do |f|%>
-    <p><%= f.name %> - <%= f.region.name %></p>
+    <p><%= f.pokemon_and_region %></p>
   <% end %>
 </div>
