@@ -1,24 +1,13 @@
-# README
+# Pokemon Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usage
 
-Things you may want to cover:
+* To use this app, just clone, run `rails db:migrate` and then run `rails s`. Everything should be set up.
 
-* Ruby version
+Contributing
 
-* System dependencies
+* Bug reports and pull requests are welcome on GitHub at https://github.com/Homies886/rails-pokemon2-project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Configuration
+License
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* The is available as open source under the terms of the MIT License.
