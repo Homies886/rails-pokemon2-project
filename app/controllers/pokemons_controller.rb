@@ -19,7 +19,7 @@ class PokemonsController < ApplicationController
     end
 
     def index
-        @pokemons = Pokemon.all
+        @pokemons = current_user.pokemons.all
     end
 
     def show

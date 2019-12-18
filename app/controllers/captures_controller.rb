@@ -26,7 +26,7 @@ class CapturesController < ApplicationController
         if @pokemon = Pokemon.find_by_id(params[:pokemon_id])
             @captures = @pokemon.captures
         else
-            @captures = Capture.order_by_date_captured
+            @captures = current_user.captures.order_by_date_captured
         end
     end
 
