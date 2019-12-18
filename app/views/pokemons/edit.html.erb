@@ -12,13 +12,5 @@
         <%= f.text_field :description %>
     </div>
     
-    <p> Add a Region </p>
-    <div>
-        <%=f.fields_for :region do |r| %>
-            <%= r.label :region %>
-            <%= r.text_field :name %>
-        <% end %>
-    </div>
-
     <%= f.submit "Update Pokemon" %>
 <% end %>
