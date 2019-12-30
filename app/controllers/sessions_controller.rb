@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
     def index
+      @pokemon = Pokemon.all.sample
     end
 
     def new
